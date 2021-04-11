@@ -1,0 +1,11 @@
+.container-fluid{
+    justify-content: space-around;
+}
+
+.row{
+    justify-content: space-around;
+}
+
+.card-body{
+    padding-left: 5%;
+}

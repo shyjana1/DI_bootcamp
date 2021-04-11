@@ -1,0 +1,26 @@
+.html{
+    scroll-behavior: smooth;
+}
+.manual-bg{
+    background-image: url('/home/shy/coding/8.4/portfolio_setup-master/images/londonbus.jpg'); background-size: cover;background-attachment: fixed;;
+    background-position: center;
+}
+
+.home-area{
+    position: relative;
+}
+
+.skills{
+    text-decoration: white;
+}
+
+h3{
+
+    color: white;
+    font-size: 20px;
+    text-shadow:
+        0.07em 0 black,
+        0 0.07em black,
+        -0.07em 0 black,
+        0 -0.07em black;
+}
