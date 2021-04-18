@@ -15,26 +15,26 @@ console.log(subtract());
 
  */
 
-var bottleCount = 0;
+var counter = 0;
 var bottlesLeft = +prompt("How many bottles left on the wall?");
-var remainingBottles = bottlesLeft - bottleCount
+// var remainingBottles = bottlesLeft - bottleCounter
 
-function beersWall() {
-    for (i = bottlesLeft; bottlesLeft >= 1; bottlesLeft -= bottleCount) {
+function beers() {
+    for (i = bottlesLeft; bottlesLeft >= 1; bottlesLeft -= counter) {
         console.log(bottlesLeft + " bottles of beer on the wall")
         console.log(bottlesLeft + " bottles of beer")
-        bottleCount++;
+        counter++;
     }
-    if (bottleCount > 1) {
-        console.log("Take " + bottleCount + "down, and pass it around")
+    if (counter > 1) {
+        console.log("Take " + counter + "down, and pass it around")
         console.log(bottlesLeft + "bottles of beer on the wall")
     } else if (bottleCount === 1) {
-        console.log("Take" + bottleCount + "down, and pass IT around")
+        console.log("Take" + counter + "down, and pass IT around")
         console.log(bottlesLeft + "bottles of beer on the wall")
     }
-    while (bottleCount > 1) {
-        if (bottlesLeft < 0);
-        console.log(remainingBottles);
-    }
+    // while (counter > 1) {
+    // if (bottlesLeft < 0);
+    // console.log(remainingBottles);
+    // }
 }
-beersWall()
+beers()
