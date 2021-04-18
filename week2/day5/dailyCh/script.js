@@ -1,20 +1,3 @@
-/* let bottleCounter = 0;
-let bottles = +prompt("how many bottles is it going to be?", "99");
-let bottleCounter = (`${bottles}`, bottleCounter++);
-
-function subtract() {
-    for (i = bottles; bottles >= 1; bottles -= bottleCounter); {
-        console.log(bottles + "bottles of beer");
-        if (i = 0, `${bottles}`) {
-            console.log(false);
-
-        }
-    }
-}
-console.log(subtract());
-
- */
-
 var counter = 0;
 var bottlesLeft = +prompt("How many bottles left on the wall?");
 // var remainingBottles = bottlesLeft - bottleCounter
