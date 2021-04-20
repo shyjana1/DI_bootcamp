@@ -42,9 +42,70 @@
 
 
 //exercise 3
-let code = prompt("enter your code", "0");
-let i = 0;
-while (i < +code) {
-    console.log(i);
-    i++ >= 10;
-};
+// let code = +prompt("enter your code", "0");
+// let i = (`${code}`);
+// while (i in code < 10) {
+//     console.log(code);
+// }
+
+// exercise 4
+// let guestList = {
+//     randy: "Germany",
+//     karla: "France",
+//     wendy: "Japan",
+//     norman: "England",
+//     sam: "Argentina"
+// }
+
+// let student = prompt("what is your name?", "??");
+// if (student in guestList) {
+//     console.log(`Hi! I'm ${student}, and I'm from ${guestList[student]}.`);
+// } else {
+//     console.log("Hi! I'm a guest");
+// };
+
+// exercise 5
+/* Create an object called family with a few key value pairs.
+Console.log the keys. (using a for loop).
+Console.log the values. (using a for loop).
+ */
+
+// let family = {
+//     Shy: "Israel",
+//     Anthony: "Canada",
+//     Steven: "Australia",
+// }
+
+// // for (i in family) {
+// //     console.log(i);
+// // }
+// let values = Object.values(family)
+// console.log(values);
+
+
+// exercise 6
+//   Given the object above, console.log “my name is Rudolf the raindeer”
+
+// let details = {
+//     my: 'name',
+//     is: 'Rudolf',
+//     the: 'raindeer'
+// }
+// let values = Object.values(details)
+// console.log("my " + values[0] + " is " + values[1] + " the " + values[2])
+
+//exercise 7
+
+/* 
+A group of friends have decided to start a secret society. The society’s name will be the first letter of each of their names sorted in alphabetical order.
+Hint: a string is an array of letters
+Console.log the name of their secret society.
+ */
+
+let names = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"]
+names.sort()
+firstOfNames = []
+for (let i = 0; i < names.length; i++) {
+    firstOfNames.push(names[i][0]);
+    console.log(firstOfNames);
+}

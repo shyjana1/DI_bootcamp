@@ -1,0 +1,26 @@
+					Finding HTML Elements
+Method								Description
+document.getElementById(id)				Find an element by element id
+document.getElementsByTagName(name)			Find elements by tag name
+document.getElementsByClassName(name)			Find elements by class name
+document.querySelector(name)				Find element by id, tag, class, etc.
+document.querySelectorAll(name)			Find elementS by id, tag, class,
+
+
+					Changing HTML Elements
+Property	Description
+element.innerHTML/innerText = new html content	Change the inner HTML of an element
+element.attribute = new value	                    Change the attribute value of an HTML element
+element.style.property = new style	  		Change the style of an HTML element
+element.setAttribute(attribute, value)	     Change the attribute value of an HTML element
+
+
+				Adding And Deleting Elements
+To add an element, you need two steps. 
+You first need to create the new element and give it whatever attributes, text, styling, etc., then append it to the parent element you want it to be inside.
+
+Method								Description
+document.createElement(element)				Create an HTML element
+document.removeChild(element)					Remove an HTML element
+document.appendChild(element)					Add an HTML element
+document.replaceChild(new, old)				Replace an HTML element
