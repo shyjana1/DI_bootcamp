@@ -27,7 +27,7 @@ function pixelUp(e) {
     mouse_down = false;
 }
 
-clear.addEventListener("mousedown", clearCanvas);
+clear.addEventListener("mousedown", clearCanvas);1
 
 function clearCanvas(e) {
     for (pixel of pixels) {
