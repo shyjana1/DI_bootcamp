@@ -18,3 +18,4 @@ const groceries1 = JSON.stringify(groceries); // according to class
 const groceries2 = JSON.parse(groceries1);
 groceries2.totalPrice = "35$";
 groceries2.other.payed = false;
+XP
