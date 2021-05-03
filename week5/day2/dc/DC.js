@@ -1,21 +1,43 @@
-let groceries = {
-    fruits: ["pear", "apple", "banana"],
-    vegetables: ["tomatoes", "cucumber", "salad"],
-    totalPrice: "20$",
-    other: {
-        payed: true,
-        meansOfPayment: ["cash", "creditCard"]
+function myform(e) {
+    // e.preventDefault();
+    let xhr = new XMLHttpRequest();
+    let temp = document.getElementById("form1")
+    // 2. Configure it: GET-request for the URL /article/.../load
+    xhr.open('GET', `https://api.giphy.com/v1/gifs/search?limit=10&q=${temp.value}&api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My`);
+    // 3. Send the request over the network
+
+    xhr.responseType = 'json'
+    xhr.send();
+    xhr.onload = function () {
+        if (xhr.status != 200) {
+            // analyze HTTP status of the response
+            // e.g. 404: Not Found
+            console.log(`Error ${xhr.status}: ${xhr.statusText}`);
+        } else { // show the result
+            // response is the server response
+            // console.log(`Done, got ${xhr.response.length} bytes`);
+            let data = xhr.response;
+            createAllGifs(data.data);
+
+        }
+    };
+    xhr.onprogress = function (event) {
+        if (event.lengthComputable) {
+            console.log(`Received ${event.loaded} of ${event.total} bytes`);
+        } else {
+            console.log(`Received ${event.loaded} bytes`); // no Content-Length
+        }
+    };
+    xhr.onerror = function () {
+        console.log("Request failed");
+    };
+
+    function createAllGifs(arr) {
+        let popup = document.getElementById("popup")
+        for (let i = 0; i < arr.length; i++) {
+            let gifs = document.createElement('img');
+            gifs.setAttribute('src', arr[i].images.fixed_height_small.url);
+            popup.appendChild(gifs);
+        };
     }
 }
-// Hint: To do this daily challenge, take a look at today’s lesson Pass By Value & Pass By Reference
-
-// Copy this object using the method that was taught in today’s lesson.
-// Change the value of totalPrice to 35$. Will we also see this modification in the copied objects ?
-// Change the value of payed to false. Will we also see this modification in the copied objects ? Why ?
-
-// let groceries2 = groceries // according to the website
-const groceries1 = JSON.stringify(groceries); // according to class
-const groceries2 = JSON.parse(groceries1);
-groceries2.totalPrice = "35$";
-groceries2.other.payed = false;
-XP
