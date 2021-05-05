@@ -24,7 +24,6 @@
 //     })
 
 
-
 // exercise 2
 // const p = new Promise((resolve, reject) => {
 //     setTimeout(() => {
@@ -38,6 +37,8 @@
 //         console.log('oops, something went wrong');
 //     })
 
+
+// exercise 3
 // const p = Promise.resolve(3).then(res => {
 //     console.log(res)
 // })
