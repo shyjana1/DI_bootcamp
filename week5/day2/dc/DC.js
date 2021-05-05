@@ -33,7 +33,7 @@ function myform(e) {
     };
 
     function createAllGifs(arr) {
-        let popup = document.getElementById("popup")
+        let popup = document.getElementById("popup") //this is the root
         for (let i = 0; i < arr.length; i++) {
             let gifs = document.createElement('img');
             gifs.setAttribute('src', arr[i].images.fixed_height_small.url);
