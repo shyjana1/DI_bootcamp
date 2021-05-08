@@ -1,13 +1,9 @@
-// DC
-class video {
-    constructor(uploader, time, title) {
-        this.uploader = uploader;
-        this.time = time;
-        this.title = title;
-    }
-    watch() {
-        console.log(`${this.uploader} watched all ${this.time} films of ${this.title}!`);
-    }
-}
-let newVideo = new video("I have", "3", "the Godfather");
-newVideo.watch();
+const promise1 = Promise.resolve(3);
+const promise2 = 42;
+const promise3 = new Promise((resolve, reject) => {
+    setTimeout(resolve, 100, 'foo');
+});
+
+Promise.all([promise1, promise2, promise3]).then(values => {
+    console.log(values);
+});

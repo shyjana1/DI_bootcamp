@@ -46,3 +46,23 @@
 // Promise.reject('boo').then(rej => {
 //     console.log(rej);
 // })
+
+
+async function simpleAsync1() {
+    return 1;
+}
+simpleAsync1().then(data => {
+    console.log(data);
+})
+
+const simpleAsync2 = async () => {
+    return 1
+}
+simpleAsync2().then(data => {
+    console.log(data);
+})
+
+
+async function convert fetch("https://swapi.dev/api/starships/9/")
+    .then(response => response.json())
+    .then(console.log);
