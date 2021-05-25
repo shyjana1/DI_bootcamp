@@ -1,0 +1,15 @@
+img {
+    width: 100px;
+}
+#root{
+    grid-template-columns: repeat(8,12.5%);
+    display:grid;
+}
+
+div{
+
+   background-color: #d6ebdd;
+   border: 1px solid;
+   border-radius: 5px;
+}
+
