@@ -3,12 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 // import Memory from './components/Memory';
 import reportWebVitals from './reportWebVitals';
-import Superhero from './superHero';
-
+// import Superhero from './superHero';
+// import Hero from './components/Hero'
+// import App from './App';
+import App2 from './App2'
 ReactDOM.render(
   <React.StrictMode>
-    {/* <Memory /> */}
-    <Superhero />
+   
+    <App2 />
   </React.StrictMode>,
   document.getElementById('root')
 );

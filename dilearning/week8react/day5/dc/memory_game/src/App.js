@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+import React from 'react'
 import './App.css';
-
-function App() {
+import superheroes from './superheroes.json'
+import Hero from './components/Hero'
+class App extends React.Component {
+  constructor(){
+    super();
+    this.state = {
+      heros: [],
+      score: 0,
+      top_score:0
+    }
+  }
+  componentDidMount(){
+    // if you have an api you will fetch
+    this.setState({heros:superheroes.superheroes})
+  }
+  render(){
+    console.log(heros);
+    const {heros,score,top_score} = this.state;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {
+        heros.map((item,i)=>{
+          return ( <Hero hero={item} key={i}/>)
+        })
+      }
+    </>
   );
+  }
 }
 
 export default App;

@@ -52,3 +52,9 @@
 
 
 }
+
+.heroList{
+  display: grid;
+  grid-template-columns: repeat(6, 15%);
+
+}
