@@ -1,11 +1,14 @@
-const counterReducer = (state = 0, action)=>{
-    switch (action,type) {
-        case "INCREMENT":
-            return state +1
-            break;
-        case "DECREMENT":
-            return state -1
-            break;
+export default (state = { count: 0 }, action) => {
+    switch (action.type) {
+      case 'INCREMENT':
+        return {
+          count: state.count + 1
+        }
+      case 'DECREMENT':
+        return {
+          count: state.count - 1
+        }
+      default:
+        return state
     }
-}
-export default counterReducer
+  }
