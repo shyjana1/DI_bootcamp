@@ -1,4 +1,4 @@
-import product1 from '../../images/basket1.jpg'
+import product1 from '../../images/bread.mp4'
 import product2 from '../../images/cookies1.jpg'
 import product3 from '../../images/bread_product1.jpg'
 

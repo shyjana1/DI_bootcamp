@@ -30,6 +30,8 @@ export const NavIcon = styled.div`
     right: 0;
     cursor: pointer;
     color: #fff;
+    border: 10px solid red; 
+
 
     p{
         transform: translate(-175%, 100%);

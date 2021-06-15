@@ -10,19 +10,26 @@ import {
 } from './Sidebar';
 import NavIcon from '../Navbar'
 
-const myIcon = ()=>{
-  console.log("ziv");
+
+const Sidebar = ({  }) => {
+  let open = false;
+  const myIcon = ()=> {
+    if(open = false) {
+      open = true;
+      console.log("hi");
+  }
+  else{
+    open = true;
+  }
 }
-const Sidebar = ({ isOpen, toggle }) => {
-  
   return (
-    <SidebarContainer isOpen={isOpen} onClick={toggle}>
-    <NavIcon  onClick={()=>myIcon()}>
-      <Icon onClick={toggle}>
+    <SidebarContainer open={open} >
+    <NavIcon id="challangedAmichai" onClick={()=>myIcon()}>
+      <Icon >
         <CloseIcon />
       </Icon>
       </NavIcon>
-      <SidebarMenu>
+      <SidebarMenu >
         <SidebarLink to='/'>Bread</SidebarLink>
         <SidebarLink to='/'>Spread</SidebarLink>
         <SidebarLink to='/'>Full Menu</SidebarLink>

@@ -8,22 +8,28 @@ export const SidebarContainer = styled.aside`
   width: 350px;
   height: 100%;
   background: #ffc500;
-  display: grid;
+  
+  ${'' /* display: grid; */}
   align-items: center;
   top: 0;
   transition: 0.3s ease-in-out;
-  right: ${({ isOpen }) => (isOpen ? '0' : '-1000px')};
-  ${'' /* onClick:${console.log("existed")}; */}
+  ${'' /* right: (${this.props.open ? '0' : '-1000px'}); */}
+  display: none;
+  right: 0;
+  onClick:${console.log("existed")};
   @media screen and (max-width: 400px) {
     width: 100%;
+
   }
 
 
-`;
+`
+;
 
 
 export const CloseIcon = styled(GiSlicedBread)`
   color: #000;
+  
 `;
 
 export const Icon = styled.div`
@@ -35,6 +41,7 @@ export const Icon = styled.div`
   font-size: 2rem;
   cursor: pointer;
   outline: none;
+  
 
 `
 // Icon = () =>{
