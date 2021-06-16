@@ -1,37 +1,33 @@
 const exp = require('express');
 const cors = require('cors')
 const bp = require('body-parser')
-const Client = require('pg').Client
+// const Client = require('pg').Client
+const knex = require('knex')
 const path = require('path');
 const fs = require('fs')
 
 const app = exp()
 
-const registerAndLogin = new Client({
-    user: 'postgres',
-    password: 'password369',
-    host: 'localhost',
+const db = knex({
     client: 'pg',
-    database: 'node_daily'
-});
-
-
+    connection: {
+        host: '127.0.0.1',
+        user: 'postgres',
+        password: 'admin',
+        database: 'node_daily'
+    }
+})
 app.use(cors());
 app.use(bp.urlencoded({ extended: false }));
 app.use(bp.json());
 app.use('/static', exp.static('public'))
 
-const sendRegisterDataToDb = async(data) => {
-    try {
-        await registerAndLogin.connect()
-        console.log('connect')
-        await registerAndLogin.query(`insert into  Register values ($1, $2, $3, $4, $5)`, [0, data.firstName, data.lastName, data.email, data.username, data.password])
-        const result = await registerAndLogin.query('SELECT * FROM  users')
-        console.table(result.rows)
-    } catch (err) { err, 'at sendRegisterDataToDb' }
-    finally {
-        await registerAndLogin.end()
-    }
+const sendRegisterDataToDb = async({lname,fname,email,password,username}) => {
+    // insert the new information into the db
+    return db("users").insert({'lname':lname,'fname':fname,'email':email,'password':password, 'username': username})
+}
+const checkuser = (email) => {//checking the email that is inserted matches the same email from the db
+    return db.select('password','fname','id').from('users').whereRaw('email LIKE ?', email)
 }
 
 app.route('/register')
@@ -45,6 +41,21 @@ app.route('/register')
     console.log("post register");
     console.log(req.body);
     sendRegisterDataToDb(req.body)
+    checkuser(req.body.email)
+    console.log(req.body.email)
+    .then(data => {
+            if (data[0].password === req.body.password){
+            let response = (true)
+        res.send(response)
+
+        } else {
+            let response = false
+        res.send(response)
+
+        }
+
+    }) 
+    // console.  log(data[0]);
 })
 
 
