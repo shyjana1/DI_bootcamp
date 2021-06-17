@@ -25,9 +25,9 @@ class App extends React.Component {
       return (
         <>
         <div>
-          <h2>{this.state.languages.map((el, i)=>{
+          <h2>{this.state.languages.map((element, i)=>{
             return( 
-            <div > <h3>{el.name}</h3>{el.votes} <button onClick ={()=>this.changeVotes(i)}>Click Here!</button></div>
+            <div > <h3>{element.name}</h3>{element.votes} <button onClick ={()=>this.changeVotes(i)}>Click Here!</button></div>
           )
           })}</h2>
         </div>
