@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-
+import ErrorBoundary from '../ErrorBoundary'
 export const ColumnRight = () => {
   const crasher = { function: 'I live to crash' };
   const [ text, textSetter ] = useState(JSON.stringify(crasher));
@@ -20,12 +20,13 @@ export const ColumnRight = () => {
       </p>
 
       <hr />
+      <ErrorBoundary >
       <p>
         Clicking this button will replace the <code>stringified</code> object,{' '}
         <code>{text}</code>, with the original object. This will result in a
         rendering error.
       </p>
-
+      </ErrorBoundary>
       <Button
         className="mr-3"
         variant="danger"

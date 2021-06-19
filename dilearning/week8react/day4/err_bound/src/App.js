@@ -9,7 +9,6 @@ import { ColumnLeft } from './columns/ColumnLeft';
 import { ColumnRight } from './columns/ColumnRight';
 
 import './App.scss';
-// import React from 'react';
 
 export const App = () => {
   return (
@@ -32,4 +31,3 @@ export const App = () => {
     </Fragment>
   );
 };
-export default App;
