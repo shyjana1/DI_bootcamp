@@ -1,4 +1,4 @@
-import eventHandler from './columns/ColumnRight'
+
 import React from 'react'
 
 
