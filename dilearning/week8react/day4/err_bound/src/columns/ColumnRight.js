@@ -26,7 +26,7 @@ export const ColumnRight = () => {
         <code>{text}</code>, with the original object. This will result in a
         rendering error.
       </p>
-      </ErrorBoundary>
+      
       <Button
         className="mr-3"
         variant="danger"
@@ -53,6 +53,7 @@ export const ColumnRight = () => {
       >
         Invoke event handler
       </Button>
+      </ErrorBoundary>
     </Container>
   );
 };

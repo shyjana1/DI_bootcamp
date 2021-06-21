@@ -1,6 +1,7 @@
-import product1 from '../../images/bread.mp4'
+import product1 from '../../images/bread2.jpg'
 import product2 from '../../images/cookies1.jpg'
 import product3 from '../../images/bread_product1.jpg'
+
 
 export const productData = [
     {

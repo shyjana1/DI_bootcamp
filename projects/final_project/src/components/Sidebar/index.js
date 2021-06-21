@@ -9,26 +9,31 @@ import {
   SideBtnWrap
 } from './Sidebar';
 import NavIcon from '../Navbar'
-
+// import './styles.css'
+import {useState} from 'react'
 
 const Sidebar = ({  }) => {
-  let open = false;
+  const [ open, setOpen] = useState(false)
+
   const myIcon = ()=> {
-    if(open = false) {
-      open = true;
-      console.log("hi");
+
+    if(open === false) {
+      setOpen = true;
+      console.log(open);
   }
-  else{
-    open = true;
-  }
+  
 }
   return (
-    <SidebarContainer open={open} >
-    <NavIcon id="challangedAmichai" onClick={()=>myIcon()}>
+
+    <SidebarContainer >
+    <NavIcon id="button" onClick={()=>myIcon()}>
       <Icon >
         <CloseIcon />
       </Icon>
       </NavIcon>
+
+      { if(open === true) {
+           <>
       <SidebarMenu >
         <SidebarLink to='/'>Bread</SidebarLink>
         <SidebarLink to='/'>Spread</SidebarLink>
@@ -37,6 +42,11 @@ const Sidebar = ({  }) => {
       <SideBtnWrap>
         <SidebarRoute to='/'>Order Now</SidebarRoute>
       </SideBtnWrap>
+      </>
+      } else {
+        return null
+      }  
+    }
     </SidebarContainer>
   );
 };
